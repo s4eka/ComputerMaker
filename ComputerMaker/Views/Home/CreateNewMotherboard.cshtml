@@ -1,5 +1,5 @@
 ﻿@model ComputerMaker.Models.Motherboard
-
+@using ComputerMaker.Enumerations
 @{
     ViewBag.Title = "CreateNewMotherboard";
 }
@@ -10,7 +10,7 @@
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-     
+    
     <div class="form-horizontal">
         <h4>Motherboard</h4>
         <hr />
@@ -26,7 +26,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Socet, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Socet, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownList("Socet")
                 @Html.ValidationMessageFor(model => model.Socet, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -72,18 +72,50 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.SATA, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.SATA1, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.SATA, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.SATA, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.SATA1, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SATA1, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.PCIe, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.SATA2, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.PCIe, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PCIe, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.SATA2, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SATA2, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SATA3, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SATA3, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SATA3, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PCIe1, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PCIe1, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PCIe1, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PCIe2, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PCIe2, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PCIe2, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PCIe3, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PCIe3, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PCIe3, "", new { @class = "text-danger" })
             </div>
         </div>
 

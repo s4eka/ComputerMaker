@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ComputerMaker.Enumerations;
 using ComputerMaker.Models;
 
 namespace ComputerMaker.Controllers
@@ -11,6 +12,7 @@ namespace ComputerMaker.Controllers
     {
 
         ComputerContext db = new ComputerContext();
+        Socet sc = new Socet();
         
 
         public ActionResult Index()
@@ -21,6 +23,7 @@ namespace ComputerMaker.Controllers
         [HttpGet]
         public ActionResult CreateNewMotherboard()
         {
+            ViewBag.Socet = Socet.socets;
             return View();
         }
 

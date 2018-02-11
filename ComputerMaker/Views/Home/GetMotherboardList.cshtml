@@ -7,7 +7,7 @@
 <h2>GetMotherboardList</h2>
 
 <p>
-    @Html.ActionLink("Create New", "CreateNewMotherboard")
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
@@ -33,10 +33,22 @@
             @Html.DisplayNameFor(model => model.MaxFrequency)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SATA)
+            @Html.DisplayNameFor(model => model.SATA1)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PCIe)
+            @Html.DisplayNameFor(model => model.SATA2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SATA3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PCIe1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PCIe2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PCIe3)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.IntegratedGraphics)
@@ -68,10 +80,22 @@
             @Html.DisplayFor(modelItem => item.MaxFrequency)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.SATA)
+            @Html.DisplayFor(modelItem => item.SATA1)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.PCIe)
+            @Html.DisplayFor(modelItem => item.SATA2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SATA3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PCIe1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PCIe2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PCIe3)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.IntegratedGraphics)
