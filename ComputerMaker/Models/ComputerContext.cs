@@ -8,6 +8,7 @@ namespace ComputerMaker.Models
 {
     public class ComputerContext : DbContext
     {
-        DbSet<Motherboard> Motherboard { get; set; }
+        public DbSet<Motherboard> Motherboards { get; set; }
+        
     }
 }

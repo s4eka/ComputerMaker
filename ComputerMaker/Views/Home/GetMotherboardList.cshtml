@@ -1,0 +1,87 @@
+﻿@model IEnumerable<ComputerMaker.Models.Motherboard>
+
+@{
+    ViewBag.Title = "GetMotherboardList";
+}
+
+<h2>GetMotherboardList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateNewMotherboard")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Socet)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Formfactor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MemoryType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MemorySlots)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaxMemoryCapacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaxFrequency)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SATA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PCIe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IntegratedGraphics)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Socet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Formfactor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MemoryType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MemorySlots)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaxMemoryCapacity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaxFrequency)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SATA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PCIe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IntegratedGraphics)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
