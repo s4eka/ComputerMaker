@@ -13,6 +13,9 @@ namespace ComputerMaker.Controllers
 
         ComputerContext db = new ComputerContext();
         Socet sc = new Socet();
+        FormFactor ff = new FormFactor();
+        MemoryType mt = new MemoryType();
+        Interfaces If = new Interfaces();
         
 
         public ActionResult Index()
@@ -24,6 +27,8 @@ namespace ComputerMaker.Controllers
         public ActionResult CreateNewMotherboard()
         {
             ViewBag.Socet = Socet.socets;
+            ViewBag.FormFactor = FormFactor.formFactors;
+            ViewBag.MemoryType = MemoryType.memoryTypes;
             return View();
         }
 
@@ -42,5 +47,40 @@ namespace ComputerMaker.Controllers
             return View(mb);
         }
 
+        [HttpGet]
+        public ActionResult CreateNewProcessor()
+        {
+            ViewBag.Socet = Socet.socets;
+            ViewBag.FormFactor = FormFactor.formFactors;
+            ViewBag.MemoryType = MemoryType.memoryTypes;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateNewProcessor(Processor pr)
+        {
+            db.Processors.Add(pr);
+            db.SaveChanges();
+            return View("Index");
+        }
+
+        [HttpGet]
+        public ActionResult GetProcessorList()
+        {
+            IEnumerable<Processor> pr = db.Processors;
+            return View(pr);
+        }
+        [HttpGet]
+        public ActionResult Maker()
+        {
+            ViewBag.Processors = db.Processors.Select(x => new SelectListItem { Value = x.Socet, Text = x.Name });
+            ViewBag.Motherboards = db.Motherboards.Select(x => new SelectListItem { Value = x.Socet, Text = x.Name });
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Maker(Processor pr, Motherboard mb)
+        {
+            return View();
+        }
     }
 }

@@ -1,5 +1,5 @@
 ﻿@model ComputerMaker.Models.Motherboard
-@using ComputerMaker.Enumerations
+
 @{
     ViewBag.Title = "CreateNewMotherboard";
 }
@@ -34,7 +34,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Formfactor, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Formfactor, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownList("FormFactor")
                 @Html.ValidationMessageFor(model => model.Formfactor, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -42,7 +42,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.MemoryType, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MemoryType, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownList("MemoryType")
                 @Html.ValidationMessageFor(model => model.MemoryType, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -64,10 +64,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MaxFrequency, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.MaxMemoryFrequency, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MaxFrequency, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MaxFrequency, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.MaxMemoryFrequency, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MaxMemoryFrequency, "", new { @class = "text-danger" })
             </div>
         </div>
 

@@ -155,6 +155,7 @@
     </Compile>
     <Compile Include="Models\ComputerContext.cs" />
     <Compile Include="Models\Motherboard.cs" />
+    <Compile Include="Models\Processor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -198,8 +199,12 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\CreateNewMotherboard.cshtml" />
     <Content Include="Views\Home\GetMotherboardList.cshtml" />
+    <Content Include="Views\Home\CreateNewMotherboard.cshtml" />
+    <Content Include="Views\Home\CreateNewProcessor.cshtml" />
+    <Content Include="Views\Home\GetProcessorList.cshtml" />
+    <Content Include="Views\Home\Maker.cshtml" />
+    <Content Include="Views\Home\MakerPost.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -7,7 +7,7 @@
 <h2>GetMotherboardList</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "CreateNewMotherboard")
 </p>
 <table class="table">
     <tr>
@@ -30,7 +30,7 @@
             @Html.DisplayNameFor(model => model.MaxMemoryCapacity)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.MaxFrequency)
+            @Html.DisplayNameFor(model => model.MaxMemoryFrequency)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.SATA1)
@@ -77,7 +77,7 @@
             @Html.DisplayFor(modelItem => item.MaxMemoryCapacity)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.MaxFrequency)
+            @Html.DisplayFor(modelItem => item.MaxMemoryFrequency)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.SATA1)

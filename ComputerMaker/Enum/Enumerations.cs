@@ -15,9 +15,9 @@ namespace ComputerMaker.Enumerations
         public Socet()
         {
             socets  = new List<SelectListItem>();
-            socets.Add(new SelectListItem { Text = "LGA2066", Value = "0" });
-            socets.Add(new SelectListItem { Text = "LGA1151", Value = "1"});
-            socets.Add(new SelectListItem { Text = "LGA1151v2", Value = "2"});
+            socets.Add(new SelectListItem { Text = "LGA2066", Value = "LGA2066" });
+            socets.Add(new SelectListItem { Text = "LGA1151", Value = "LGA1151" });
+            socets.Add(new SelectListItem { Text = "LGA1151v2", Value = "LGA1151v2" });
             socets.Add(new SelectListItem { Text = "LGA1150", Value = "3"});
             socets.Add(new SelectListItem { Text = "LGA2011_3", Value = "4"});
             socets.Add(new SelectListItem { Text = "LGA2011", Value = "5"});
@@ -46,58 +46,60 @@ namespace ComputerMaker.Enumerations
 
 
 
-    enum MotherBoardFormFactor
+    public  class FormFactor
     {
-        ATX,
-        mATX,
-        EATX,
-        BTX,
-        mBTX,
-        SSIEEB,
-        SSICEB,
-        FlexATX,
-        DTX,
-        Mini_DTX,
-        mini_ITX,
-        ThinMini_ITX,
-        miniSTX,
-        UCFF
+        public static List<SelectListItem> formFactors { get; set; }
+        public FormFactor()
+        {
+            formFactors = new List<SelectListItem>();
+            formFactors.Add(new SelectListItem { Text = "ATX", Value = "1" });
+            formFactors.Add(new SelectListItem { Text = "mATX", Value = "2" });
+            formFactors.Add(new SelectListItem { Text = "EATX", Value = "3" });
+            formFactors.Add(new SelectListItem { Text = "BTX", Value = "4" });
+            formFactors.Add(new SelectListItem { Text = "mBTX", Value = "5" });
+            formFactors.Add(new SelectListItem { Text = "SSIEEB", Value = "6" });
+            formFactors.Add(new SelectListItem { Text = "SSICEB", Value = "7" });
+            formFactors.Add(new SelectListItem { Text = "FlexATX", Value = "8" });
+            formFactors.Add(new SelectListItem { Text = "DTX", Value = "9" });
+            formFactors.Add(new SelectListItem { Text = "Mini_DTX", Value = "10" });
+            formFactors.Add(new SelectListItem { Text = "mini_ITX", Value = "11" });
+            formFactors.Add(new SelectListItem { Text = "ThinMini_ITX", Value = "12" });
+            formFactors.Add(new SelectListItem { Text = "miniSTX", Value = "13" });
+            formFactors.Add(new SelectListItem { Text = "UCFF", Value = "14" });
+
+
+        }
+       
     }
-    enum MemoryType
+
+
+    public class MemoryType
     {
-        DDR4_DIMM,
-        DDR4_SO_DIMM,
-        DDR3_DIMM,
-        DDR3_SO_DIMM,
-        DDR4_DIMM_Registered,
-        DDR3_DIMM_Registered,
-        DDR3_SO_DIMM_Registered,
-        DDR2_FB_DIMM,
-        DDR2_DIMM_Registered,
-        DDR2_DIMM,
-        DDR2_SO_DIMM,
-        DDR_DIMM_Registered,
-        DDR_DIMM
+        public static List<SelectListItem> memoryTypes { get; set; }
+        public MemoryType()
+        {
+            memoryTypes = new List<SelectListItem>();
+            memoryTypes.Add(new SelectListItem { Text = "DDR4 DIMM", Value = "DDR4 DIMM" });
+            memoryTypes.Add(new SelectListItem { Text = "DDR3 DIMM", Value = "DDR3 DIMM" });
+        }
+        
     }
-    enum Interfaces
+    public class Interfaces
     {
-        Expressx16,
-        Expressx8,
-        Expressx4,
-        Expressx1,
-        Express30x16,
-        Express30x8,
-        Express30x4,
-        Express30x1,
-        PCI,
-        PCIX,
-        SATA20,
-        SATA30,
-        mSATA,
-        SATAExpress,
-        M2,
-        SAS,
-        eSATA
+        public static List<SelectListItem> interfaces { get; set; }
+        public Interfaces()
+        {
+            interfaces = new List<SelectListItem>();
+            interfaces.Add(new SelectListItem { Text = "PCIe1", Value = "1" });
+            interfaces.Add(new SelectListItem { Text = "PCIe2", Value = "2" });
+            interfaces.Add(new SelectListItem { Text = "PCIe3", Value = "3" });
+            interfaces.Add(new SelectListItem { Text = "SATA1", Value = "4" });
+            interfaces.Add(new SelectListItem { Text = "SATA2", Value = "5" });
+            interfaces.Add(new SelectListItem { Text = "SATA3", Value = "6" });
+
+
+        }
+
     }
 
 }
