@@ -24,7 +24,11 @@
     function onChange() {
         var MotherId = $('#motherboard option:selected').val();
         var ProcId = $('#processor option:selected').val();
-        var MemId = $('#memory option:selected').val();
+        var MemId;
+        var i = 0;
+        while ($("#memory").is("#memory" + i)) {
+            MemId[i++] = $("#memory" + i + "option:selected").val();
+        }
         console.log(MotherId);
         console.log(ProcId);
         console.log(MemId);
