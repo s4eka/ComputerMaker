@@ -10,6 +10,9 @@
     </div>
     <div id="processor">
     </div>
+    <div id="memory">
+
+    </div>
 </div>
 <div id="test"></div>
 <div class="form-group">
@@ -21,12 +24,16 @@
     function onChange() {
         var MotherId = $('#motherboard option:selected').val();
         var ProcId = $('#processor option:selected').val();
+        var MemId = $('#memory option:selected').val();
         console.log(MotherId);
         console.log(ProcId);
+        console.log(MemId);
         CheckProc(ProcId);
         CheckMother(MotherId);
+        CheckMem(MemId);
         LoadMother();
         LoadProc();
+        LoadMem();
     }
     function CheckProc(Id) {
         $("#test").load('@Url.Action("CheckProcessor", "Home")?Id=' + Id);
@@ -34,15 +41,22 @@
     function CheckMother(Id) {
         $("#test").load('@Url.Action("CheckMotherboard", "Home")?Id=' + Id);
     }
+     function CheckMem(Id) {
+        $("#test").load('@Url.Action("CheckMemory", "Home")?Id=' + Id);
+    }
     function LoadProc() {
         $("#processor").load('@Url.Action("LoadProcessors", "Home")');
     }
     function LoadMother() {
         $("#motherboard").load('@Url.Action("LoadMotherboard", "Home")');
     }
+    function LoadMem() {
+        $("#memory").load('@Url.Action("LoadMemory", "Home")');
+    }
     $(document).ready(function () {
         LoadMother();
         LoadProc();
+        LoadMem();
     });
 </script>
 

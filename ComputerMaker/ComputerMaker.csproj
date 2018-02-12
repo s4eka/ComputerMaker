@@ -211,6 +211,7 @@
     <Content Include="Views\Home\LoadMotherboard.cshtml" />
     <Content Include="Views\Home\GetRAMList.cshtml" />
     <Content Include="Views\Home\CreateNewRAM.cshtml" />
+    <Content Include="Views\Home\LoadMemory.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

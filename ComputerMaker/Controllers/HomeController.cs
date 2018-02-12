@@ -95,13 +95,7 @@ namespace ComputerMaker.Controllers
             Reload();
             return View();
         }
-
-        public ActionResult MakerPost()
-        {
-
-            ViewBag.JSONMotherboards = JsonConvert.SerializeObject(mbList);
-            return View();
-        }
+        
 
         public void CheckMotherboard(string Id)
         {
@@ -115,10 +109,8 @@ namespace ComputerMaker.Controllers
             computer.ProcessorId = id;
         }
 
-        public void CheckRAM(string Id)
+        public void CheckMem(string Id)
         {
-            int id = Int32.Parse(Id);
-            computer.RAMId = id;
         }
 
         
@@ -155,6 +147,44 @@ namespace ComputerMaker.Controllers
             }
             return PartialView(mother);
         }
+
+        public ActionResult LoadMemory()
+        {
+            int MotherId = computer.MotherboardId;
+            List<RAM> ram = new List<RAM>();
+            if (MotherId == 0)
+            {
+                ram = rams;
+                computer.MemoryId.Add(0);
+            }
+            else
+            {
+                if(String.Compare(mbList.Find(a => a.Id == MotherId).MemoryType, procList.Find(a => a.Id == computer.ProcessorId).MemoryType) > 0)
+                {
+                    computer.MemoryType = procList.Find(a => a.Id == computer.ProcessorId).MemoryType;
+                }
+                else
+                {
+                    computer.MemoryType = mbList.Find(a => a.Id == MotherId).MemoryType;
+                }
+                if (mbList.Find(a => a.Id == MotherId).MaxMemoryFrequency > procList.Find(a => a.Id == computer.ProcessorId).MaxMemoryFrequency)
+                {
+                    computer.MaxMemoryFrequency = procList.Find(a => a.Id == computer.ProcessorId).MaxMemoryFrequency;
+                }
+                else
+                {
+                    computer.MaxMemoryFrequency = mbList.Find(a => a.Id == MotherId).MaxMemoryFrequency;
+                }
+                computer.MaxMemoryCapacity = mbList.Find(a => a.Id == MotherId).MaxMemoryCapacity;
+                computer.MaxMemoryCount = mbList.Find(a => a.Id == MotherId).MemorySlots;
+
+                ram = rams.Where(a => a.Type == computer.MemoryType)
+                    .Where(a => a.Frequency <= computer.MaxMemoryFrequency).ToList();
+            }
+            ViewBag.computer = computer;
+            return PartialView(ram);
+        }
+
         public void Reload()
         {
             LoadMotherboard();
