@@ -109,8 +109,13 @@ namespace ComputerMaker.Controllers
             computer.ProcessorId = id;
         }
 
-        public void CheckMem(string Id)
+        public void CheckMem(params string[] Id)
         {
+            computer.MemoryId = new List<int>();
+            foreach (var item in Id)
+            {
+                computer.MemoryId.Add(Int32.Parse(item));
+            }
         }
 
         
@@ -152,7 +157,11 @@ namespace ComputerMaker.Controllers
         {
             int MotherId = computer.MotherboardId;
             List<RAM> ram = new List<RAM>();
-            if (MotherId == 0)
+            if(computer.MemoryId.Count > 0)
+            {
+                ram = rams;
+            }
+            else if (MotherId == 0)
             {
                 ram = rams;
                 computer.MemoryId.Add(0);
