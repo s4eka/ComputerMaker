@@ -16,6 +16,7 @@ namespace ComputerMaker.Controllers
         static ComputerContext db = new ComputerContext();
         static List<Motherboard> mbList = new List<Motherboard>();
         static List<Processor> procList = new List<Processor>();
+        static List<RAM> rams = new List<RAM>();
 
         static Computer computer = new Computer();
 
@@ -28,6 +29,7 @@ namespace ComputerMaker.Controllers
         {
             mbList = db.Motherboards.ToList();
             procList = db.Processors.ToList();
+            rams = db.RAMs.ToList();
         }
 
         public ActionResult Index()
@@ -164,6 +166,28 @@ namespace ComputerMaker.Controllers
             CheckMotherboard(motherId);
             CheckProcessor(procId);
             Reload();
+        }
+        [HttpGet]
+        public ActionResult CreateNewRAM()
+        {
+            ViewBag.Type = MemoryType.memoryTypes;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateNewRAM(RAM ram)
+        {
+            db.RAMs.Add(ram);
+            db.SaveChanges();
+            
+            return View("Index");
+        }
+
+        [HttpGet]
+        public ActionResult GetRAMList()
+        {
+            IEnumerable<RAM> ram = rams;
+            return View(ram);
         }
     }
 }
