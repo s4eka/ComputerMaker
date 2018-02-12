@@ -41,6 +41,27 @@ namespace ComputerMaker.Controllers
         }
 
         [HttpGet]
+        public ActionResult CreateNewRAM()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateNewRAM(RAM ram)
+        {
+            db.RAMs.Add(ram);
+            db.SaveChanges();
+            return View("Index");
+        }
+
+        [HttpGet]
+        public ActionResult GetRAMList()
+        {
+            IEnumerable<RAM> ram = db.RAMs;
+            return View(ram);
+        }
+
+        [HttpGet]
         public ActionResult GetMotherboardList()
         {
             IEnumerable<Motherboard> mb = db.Motherboards;
@@ -73,22 +94,14 @@ namespace ComputerMaker.Controllers
         [HttpGet]
         public ActionResult Maker()
         {
-            ViewBag.Motherboards = db.Motherboards;
+            ViewBag.Processors = db.Processors.Select(x => new SelectListItem { Value = x.Socet, Text = x.Name });
+            ViewBag.Motherboards = db.Motherboards.Select(x => new SelectListItem { Value = x.Socet, Text = x.Name });
             return View();
         }
         [HttpPost]
-        public ActionResult MakerPost()
+        public ActionResult Maker(Processor pr, Motherboard mb)
         {
-            return View("Index");
-        }
-
-        [HttpGet]
-        public ActionResult LoadProcessors(string Id)
-        {
-            int id = Int32.Parse(Id);
-            var socet = db.Motherboards.Find(id).Socet;
-            var Processors = db.Processors.Where(a => a.Socet == socet).ToList();
-            return PartialView(Processors);
+            return View();
         }
     }
 }

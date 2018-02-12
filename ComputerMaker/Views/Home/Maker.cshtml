@@ -1,34 +1,17 @@
 ﻿
-<script type="text/javascript" src="~/scripts/jquery-1.10.2.min.js"></script>
 @{
     ViewBag.Title = "Maker";
 }
 
-<h1>Maker</h1>
-<div style="height:300px">
-    <div id="motherboard">
-        <h2>Motherboards:</h2>
-        <select>
-            @foreach (var m in ViewBag.Motherboards)
-            {
-                <option value="@m.Id">@m.Name</option>
-            }
-        </select>
-    </div>
-    <div id="processor">
-    </div>
-</div>
-<div class="form-group">
-    <div class="col-md-offset-2 col-md-10">
-        <input type="submit" value="Create" class="btn btn-default" />
-    </div>
-</div>
-<script type="text/javascript">
-        $(document).ready(function () {
-            $('#motherboard').click(function () {
-                var id = $('#motherboard option:selected').val();
-                $('#processor').load('@Url.Action("LoadProcessors", "Home")/'+id)
-        });
-    });
-</script>
+<h2>Maker</h2>
+@using (Html.BeginForm())
+{
+    @Html.DropDownList("Processors")
+    @Html.DropDownList("Motherboards")
+    @*<div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>*@
+}
 
