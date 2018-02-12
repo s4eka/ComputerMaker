@@ -157,6 +157,7 @@
     <Compile Include="Models\ComputerContext.cs" />
     <Compile Include="Models\Motherboard.cs" />
     <Compile Include="Models\Processor.cs" />
+    <Compile Include="Models\RAM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\RAM.cs" />
   </ItemGroup>
@@ -207,11 +208,16 @@
     <Content Include="Views\Home\GetProcessorList.cshtml" />
     <Content Include="Views\Home\Maker.cshtml" />
     <Content Include="Views\Home\LoadProcessors.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Home\MakerPost.cshtml" />
     <Content Include="Views\Home\LoadMotherboard.cshtml" />
     <Content Include="Views\Home\GetRAMList.cshtml" />
     <Content Include="Views\Home\CreateNewRAM.cshtml" />
     <Content Include="Views\Home\LoadMemory.cshtml" />
+=======
+    <Content Include="Views\Home\GetRAMList.cshtml" />
+    <Content Include="Views\Home\CreateNewRAM.cshtml" />
+>>>>>>> efa0b7d74b73425fc1fefc41c2a98082c81a3978
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
