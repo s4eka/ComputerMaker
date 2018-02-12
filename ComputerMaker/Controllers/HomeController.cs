@@ -73,14 +73,22 @@ namespace ComputerMaker.Controllers
         [HttpGet]
         public ActionResult Maker()
         {
-            ViewBag.Processors = db.Processors.Select(x => new SelectListItem { Value = x.Socet, Text = x.Name });
-            ViewBag.Motherboards = db.Motherboards.Select(x => new SelectListItem { Value = x.Socet, Text = x.Name });
+            ViewBag.Motherboards = db.Motherboards;
             return View();
         }
         [HttpPost]
-        public ActionResult Maker(Processor pr, Motherboard mb)
+        public ActionResult MakerPost()
         {
-            return View();
+            return View("Index");
+        }
+
+        [HttpGet]
+        public ActionResult LoadProcessors(string Id)
+        {
+            int id = Int32.Parse(Id);
+            var socet = db.Motherboards.Find(id).Socet;
+            var Processors = db.Processors.Where(a => a.Socet == socet).ToList();
+            return PartialView(Processors);
         }
     }
 }

@@ -204,7 +204,7 @@
     <Content Include="Views\Home\CreateNewProcessor.cshtml" />
     <Content Include="Views\Home\GetProcessorList.cshtml" />
     <Content Include="Views\Home\Maker.cshtml" />
-    <Content Include="Views\Home\MakerPost.cshtml" />
+    <Content Include="Views\Home\LoadProcessors.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

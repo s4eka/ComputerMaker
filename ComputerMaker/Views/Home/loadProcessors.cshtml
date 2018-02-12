@@ -1,0 +1,10 @@
+﻿@model List<ComputerMaker.Models.Processor>
+<div id="processor">
+    <h2>Processors:</h2>
+    <select>
+        @foreach (var m in Model)
+        {
+            <option value="@m.Id">@m.Name</option>
+        }
+    </select>
+</div>
