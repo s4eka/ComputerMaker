@@ -5,30 +5,44 @@
 }
 
 <h1>Maker</h1>
-<div style="height:300px">
+<div id="maker" style="height:300px">
     <div id="motherboard">
-        <h2>Motherboards:</h2>
-        <select>
-            @foreach (var m in ViewBag.Motherboards)
-            {
-                <option value="@m.Id">@m.Name</option>
-            }
-        </select>
     </div>
     <div id="processor">
     </div>
 </div>
+<div id="test"></div>
 <div class="form-group">
     <div class="col-md-offset-2 col-md-10">
         <input type="submit" value="Create" class="btn btn-default" />
     </div>
 </div>
 <script type="text/javascript">
-        $(document).ready(function () {
-            $('#motherboard').click(function () {
-                var id = $('#motherboard option:selected').val();
-                $('#processor').load('@Url.Action("LoadProcessors", "Home")/'+id)
-        });
+    function onChange() {
+        var MotherId = $('#motherboard option:selected').val();
+        var ProcId = $('#processor option:selected').val();
+        console.log(MotherId);
+        console.log(ProcId);
+        CheckProc(ProcId);
+        CheckMother(MotherId);
+        LoadMother();
+        LoadProc();
+    }
+    function CheckProc(Id) {
+        $("#test").load('@Url.Action("CheckProcessor", "Home")?Id=' + Id);
+    }
+    function CheckMother(Id) {
+        $("#test").load('@Url.Action("CheckMotherboard", "Home")?Id=' + Id);
+    }
+    function LoadProc() {
+        $("#processor").load('@Url.Action("LoadProcessors", "Home")');
+    }
+    function LoadMother() {
+        $("#motherboard").load('@Url.Action("LoadMotherboard", "Home")');
+    }
+    $(document).ready(function () {
+        LoadMother();
+        LoadProc();
     });
 </script>
 

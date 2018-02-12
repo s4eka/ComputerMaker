@@ -1,0 +1,18 @@
+﻿@model List<ComputerMaker.Models.Motherboard>
+<div id="motherboard">
+    <h2>Motherboard:</h2>
+    <select onchange="onChange()">
+        <option value="0">nonSelect</option>
+        @foreach (var m in Model)
+        {
+            if (ViewBag.computer.MotherboardId == m.Id)
+            {
+                <option selected value="@m.Id">@m.Name</option>
+            }
+            else
+            {
+                <option value="@m.Id">@m.Name</option>
+            }
+         }
+    </select>
+</div>

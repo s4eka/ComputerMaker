@@ -1,10 +1,18 @@
 ﻿@model List<ComputerMaker.Models.Processor>
 <div id="processor">
     <h2>Processors:</h2>
-    <select>
+    <select onchange="onChange()">
+        <option value="0" >nonSelect</option>
         @foreach (var m in Model)
         {
-            <option value="@m.Id">@m.Name</option>
+            if (ViewBag.computer.ProcessorId == m.Id)
+            {
+                <option selected value="@m.Id">@m.Name</option>
+            }
+            else
+            {
+                <option value="@m.Id">@m.Name</option>
+            }
         }
     </select>
 </div>

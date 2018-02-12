@@ -153,6 +153,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Computer.cs" />
     <Compile Include="Models\ComputerContext.cs" />
     <Compile Include="Models\Motherboard.cs" />
     <Compile Include="Models\Processor.cs" />
@@ -205,6 +206,8 @@
     <Content Include="Views\Home\GetProcessorList.cshtml" />
     <Content Include="Views\Home\Maker.cshtml" />
     <Content Include="Views\Home\LoadProcessors.cshtml" />
+    <Content Include="Views\Home\MakerPost.cshtml" />
+    <Content Include="Views\Home\LoadMotherboard.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
