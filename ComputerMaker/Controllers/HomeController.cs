@@ -26,7 +26,7 @@ namespace ComputerMaker.Controllers
         [HttpGet]
         public ActionResult CreateNewMotherboard()
         {
-            ViewBag.Socet = Socet.socets;
+            ViewBag.Socet = Socet.socets;       
             ViewBag.FormFactor = FormFactor.formFactors;
             ViewBag.MemoryType = MemoryType.memoryTypes;
             return View();
