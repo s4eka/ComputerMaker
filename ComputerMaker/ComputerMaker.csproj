@@ -157,7 +157,6 @@
     <Compile Include="Models\ComputerContext.cs" />
     <Compile Include="Models\Motherboard.cs" />
     <Compile Include="Models\Processor.cs" />
-    <Compile Include="Models\RAM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\RAM.cs" />
   </ItemGroup>
@@ -166,12 +165,15 @@
     <Content Include="App_Data\ComputerDB_log.ldf">
       <DependentUpon>ComputerDB.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Start\Content\bootstrap.css" />
+    <Content Include="App_Start\Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="App_Start\Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -188,7 +190,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -208,16 +212,13 @@
     <Content Include="Views\Home\GetProcessorList.cshtml" />
     <Content Include="Views\Home\Maker.cshtml" />
     <Content Include="Views\Home\LoadProcessors.cshtml" />
-<<<<<<< HEAD
     <Content Include="Views\Home\MakerPost.cshtml" />
     <Content Include="Views\Home\LoadMotherboard.cshtml" />
     <Content Include="Views\Home\GetRAMList.cshtml" />
     <Content Include="Views\Home\CreateNewRAM.cshtml" />
     <Content Include="Views\Home\LoadMemory.cshtml" />
-=======
     <Content Include="Views\Home\GetRAMList.cshtml" />
     <Content Include="Views\Home\CreateNewRAM.cshtml" />
->>>>>>> efa0b7d74b73425fc1fefc41c2a98082c81a3978
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

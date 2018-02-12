@@ -40,7 +40,7 @@ namespace ComputerMaker.Controllers
         [HttpGet]
         public ActionResult CreateNewMotherboard()
         {
-            ViewBag.Socet = Socet.socets;
+            ViewBag.Socet = Socet.socets;       
             ViewBag.FormFactor = FormFactor.formFactors;
             ViewBag.MemoryType = MemoryType.memoryTypes;
             return View();
@@ -53,6 +53,7 @@ namespace ComputerMaker.Controllers
             db.SaveChanges();
             return View("Index");
         }
+        
 
         [HttpGet]
         public ActionResult GetMotherboardList()
@@ -93,6 +94,9 @@ namespace ComputerMaker.Controllers
         public ActionResult Maker()
         {
             Reload();
+            ViewBag.Processors = db.Processors.Select(x => new SelectListItem { Value = x.Socet, Text = x.Name });
+            ViewBag.Motherboards = db.Motherboards.Select(x => new SelectListItem { Value = x.Socet, Text = x.Name });
+
             return View();
         }
         
@@ -227,6 +231,10 @@ namespace ComputerMaker.Controllers
         {
             IEnumerable<RAM> ram = rams;
             return View(ram);
+        }
+        public ActionResult Maker(Processor pr, Motherboard mb)
+        {
+            return View();
         }
     }
 }
